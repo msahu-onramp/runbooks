@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TABLE_NAME='{{ .tableName | type "select" | description "Select a table or index" | options "default Employee Customers" }}'
+TABLE_NAME='{{ .tableName | type "select" | description "Select a table or index" | options "ats-placement-versions-dev" "ats-direct-v2-configs-dev" "user-details-dev" "launchpadVersions-dev" "multiAccounts-dev" }}'
 
 # -------- Filters - optional --------
 FILTER_VALUE='{{ .filterValue | description "Enter attribute value" }}'
