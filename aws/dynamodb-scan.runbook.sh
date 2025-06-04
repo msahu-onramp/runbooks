@@ -1,7 +1,7 @@
 #!/bin/bash
 
 TABLE_NAME='{{ .tableName | type "select" | description "Select a table or index" | options "ats-placement-versions-dev" "ats-direct-v2-configs-dev" "user-details-dev" "launchpadVersions-dev" "multiAccounts-dev" }}'
-
+REGION_NAME='{{ .regionName | type "select" | description "Select a region" | options "eu-west-1" "us-east-1" }}'
 # -------- Filters - optional --------
 FILTER_VALUE='{{ .filterValue | description "Enter attribute value" }}'
 FILTER_TYPE='{{ .filterType | type "select" | description "Type" | options "String" "Number" "Binary" "Boolean" "Null" | default "String" }}'
@@ -10,7 +10,7 @@ FILTER_ATTRIBUTE='{{ .filterAttribute | description "Attribute name" }}'
 
 
 # -------- Build and Run Command --------
-CMD="aws dynamodb scan --table-name \"$TABLE_NAME\""
+CMD="aws dynamodb scan --table-name \"$TABLE_NAME\" --region \"$REGION_NAME\" "
 
 # Add filter if provided
 if [ -n "$FILTER_ATTRIBUTE" ] && [ -n "$FILTER_VALUE" ]; then
