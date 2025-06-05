@@ -1,6 +1,5 @@
 #!/bin/bash
 
-TABLE_NAME='{{ .tableName | type "select" | description "Select a table or index" | options "ats-placement-versions-dev" "ats-direct-v2-configs-dev" "user-details-dev" "launchpadVersions-dev" "multiAccounts-dev" }}'
 REGION_NAME='{{ .regionName | type "select" | description "Select a region" | options "eu-west-1" "us-east-1" }}'
 # -------- Filters - optional --------
 FILTER_VALUE='{{ .filterValue | description "Enter attribute value" }}'
