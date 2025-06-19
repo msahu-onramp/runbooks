@@ -1,6 +1,6 @@
 #!/bin/bash
 
-REGION_NAME='{{ .regionName | type "select" | description "Select a region" | options "eu-west-1" "us-east-1" }}'
+REGION_NAME='{{ .regionName | type "select" | description "Select a region" | options "eu-west-1" "us-east-1" | default "eu-west-1" }}'
 # -------- Filters - optional --------
 FILTER_VALUE='{{ .filterValue | description "Enter attribute value" }}'
 FILTER_TYPE='{{ .filterType | type "select" | description "Type" | options "String" "Number" "Binary" "Boolean" "Null" | default "String" }}'
