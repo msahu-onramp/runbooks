@@ -7,6 +7,7 @@ FILTER_TYPE='{{ .filterType | type "select" | description "Type" | options "Stri
 FILTER_CONDITION='{{ .filterCondition | type "select" | description "Condition" | options "Equal_to" "Not_equal_to" "Less_than_or_equal_to" "Less_than" "Greater_than_or_equal_to" "Greater_than" "Between" "Exists" "Not_exists" "Contains" "Not_contains" "Begins_with" | default "Equal_to" }}'
 FILTER_ATTRIBUTE='{{ .filterAttribute | description "Attribute name" }}'
 
+TABLE_NAME='{{ .tableName | type "select" | description "the name of the table" | options "ats-placement-versions-dev" "ats-direct-v2-configs-dev" "user-details-dev" "launchpadVersions-dev" "multiAccounts-dev" }}'
 
 # -------- Build and Run Command --------
 CMD="aws dynamodb scan --table-name \"$TABLE_NAME\" --region \"$REGION_NAME\" "
