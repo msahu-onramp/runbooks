@@ -27,7 +27,8 @@ log_group_name = '''
                            "/aws/containerinsights/hoop-prod/dataplane"
                            "/aws/eks/hoop-prod/cluster"
                            "/aws/lambda/logdna_cloudwatch"
-                           "/aws/rds/instance/hoopdb/postgresql" }}
+                           "/aws/rds/instance/hoopdb/postgresql"
+                           "/aws/lambda/FbCapiAdapter-dev-SendEventsToFBFunction-017Xh2pse1tE"  }}
 '''.strip()
 
 relative_window = '''
