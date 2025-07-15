@@ -10,8 +10,9 @@ FILTER_ATTRIBUTE='{{ .filterAttribute | description "Attribute name" }}'
 #TABLE_NAME='{{ .tableName | type "select" | description "the name of the table" | options "ats-placement-versions-dev" "ats-direct-v2-configs-dev" "user-details-dev" "launchpadVersions-dev" "multiAccounts-dev" }}'
 
 # -------- Build and Run Command --------
-CMD="aws dynamodb scan --table-name \"$TABLE_NAME\" --region \"$REGION_NAME\" "
+CMD="aws dynamodb scan --table-name \"$TABLE_NAME\"  "
 
+#--region \"$REGION_NAME\"
 # Add filter if provided
 if [ -n "$FILTER_ATTRIBUTE" ] && [ -n "$FILTER_VALUE" ]; then
     # Build attribute value based on type
